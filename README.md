@@ -1,10 +1,10 @@
-# EasyChat - 大型景区内部通讯平台
+# 大型景区内部通讯平台
 
 一个基于 Spring Boot + Netty + WebSocket 的实时通讯平台，专为大型景区内部管理人员设计的企业级即时通讯解决方案。
 
 ## 项目概述
 
-EasyChat 是一个功能完整的内部通讯系统，支持实时消息传输、群组管理、用户管理、文件传输等核心功能。采用现代化技术栈构建，确保高并发、高可靠性的通讯体验。
+一个功能完整的内部通讯系统，支持实时消息传输、群组管理、用户管理、文件传输等核心功能。采用现代化技术栈构建，确保高并发、高可靠性的通讯体验。
 
 ## 核心功能
 
@@ -55,28 +55,6 @@ EasyChat 是一个功能完整的内部通讯系统，支持实时消息传输�
 - **用户认证** - JWT Token 认证
 - **缓存管理** - Redis 缓存优化
 
-## 项目结构
-
-```
-com.easychat/
-├── annotation/          # 自定义注解
-├── aspect/             # AOP 切面处理
-├── controller/         # REST API 控制器
-├── entity/            # 实体类
-│   ├── config/        # 配置类
-│   ├── constants/     # 常量定义
-│   ├── dto/          # 数据传输对象
-│   ├── enums/        # 枚举类型
-│   ├── po/           # 持久化对象
-│   ├── query/        # 查询参数
-│   └── vo/           # 视图对象
-├── exception/         # 异常处理
-├── mappers/          # MyBatis 映射器
-├── redis/            # Redis 配置和工具
-├── service/          # 业务逻辑层
-├── utils/            # 工具类
-└── websocket/        # WebSocket 处理
-```
 
 ## 快速开始
 
@@ -91,19 +69,18 @@ com.easychat/
 1. **克隆项目**
 ```bash
 git clone <repository-url>
-cd easychat
 ```
 
 2. **配置数据库**
 ```sql
-CREATE DATABASE easychat DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE chat DEFAULT CHARSET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
 3. **修改配置文件**
 编辑 `src/main/resources/application.properties`：
 ```properties
 # 数据库配置
-spring.datasource.url=jdbc:mysql://localhost:3306/easychat?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+spring.datasource.url=jdbc:mysql://localhost:3306/chat?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
 spring.datasource.username=your_username
 spring.datasource.password=your_password
 
@@ -148,7 +125,7 @@ mvn spring-boot:run
 ### Docker 部署
 ```dockerfile
 FROM openjdk:8-jre-alpine
-COPY target/easychat-1.0.jar app.jar
+COPY target/chat-1.0.jar app.jar
 EXPOSE 5050 5051
 ENTRYPOINT ["java", "-jar", "/app.jar"]
 ```
@@ -176,4 +153,4 @@ ENTRYPOINT ["java", "-jar", "/app.jar"]
 
 ---
 
-**EasyChat** - 让景区内部沟通更高效！
+**chat** - 让景区内部沟通更高效！
